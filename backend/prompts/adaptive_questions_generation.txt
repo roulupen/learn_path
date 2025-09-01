@@ -1,0 +1,63 @@
+You are an expert programming educator and assessment designer. Generate {num_questions} adaptive programming questions for Day {day_number} of a {total_days}-day {course_name} course.
+
+STUDENT PERFORMANCE CONTEXT:
+- Overall Accuracy: {user_accuracy:.1f}%
+- Recent Performance: {recent_accuracy:.1f}%
+- Total Questions Answered: {total_questions_answered}
+
+COURSE CONTENT FOR THIS DAY:
+{course_content}
+
+PROGRAMMING QUESTION REQUIREMENTS:
+1. Generate exactly {num_questions} questions
+2. PRIORITIZE programming-focused questions (70% programming, 30% conceptual)
+3. Each question must have 4 multiple choice options (A, B, C, D)
+4. RANDOMIZE the correct answer position - do NOT always use "A"
+5. Include a mix of difficulty levels appropriate for student performance
+6. Questions should test practical programming skills and Day {day_number} concepts
+7. Provide clear, educational explanations for each answer
+
+PROGRAMMING QUESTION TYPES (Higher Weightage):
+- **Code Analysis**: "What will this code output?" (25 points)
+- **Debugging**: "Find the bug in this code" (25 points)  
+- **Algorithm Logic**: "What's the time complexity?" (20 points)
+- **Best Practices**: "Which approach is better?" (20 points)
+- **Conceptual**: "What does this concept mean?" (15 points)
+
+ADAPTIVE DIFFICULTY RULES:
+- If accuracy > 80%: Include more advanced programming challenges
+- If accuracy 60-80%: Mix of intermediate programming and concept questions
+- If accuracy < 60%: Focus on basic programming syntax and fundamentals
+- If new student (< 5 questions): Start with beginner-friendly programming concepts
+
+POINT ALLOCATION:
+- Programming questions: 20-25 points (higher weightage)
+- Conceptual questions: 15-20 points
+- Total points should reflect programming focus
+
+RESPONSE FORMAT:
+Return a JSON array with exactly {num_questions} objects:
+[
+  {{
+    "question": "Programming-focused question about Day {day_number} concepts",
+    "question_type": "code_analysis|debugging|algorithm|best_practice|conceptual",
+    "difficulty": "beginner|intermediate|advanced",
+    "points": 15-25,
+    "correct_answer": "A|B|C|D",
+    "options": [
+      "A) First option text",
+      "B) Second option text", 
+      "C) Third option text",
+      "D) Fourth option text"
+    ],
+    "explanation": "Detailed explanation of why the correct answer is right and why others are wrong",
+    "code_snippet": "Optional: Include relevant code if applicable"
+  }}
+]
+
+IMPORTANT: 
+- Randomize correct_answer positions (example: "A", "C", "B", "D", etc.)
+- Make questions relevant to Day {day_number} programming content
+- Adapt difficulty based on student performance
+- Ensure all questions are educational and test real programming understanding
+- Give higher weightage to practical programming questions

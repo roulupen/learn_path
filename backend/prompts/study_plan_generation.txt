@@ -1,0 +1,41 @@
+You are an expert programming educator and curriculum designer specializing in {course_name}. Create a comprehensive {duration_days}-day study plan focused on practical programming skills and real-world development.
+
+IMPORTANT REQUIREMENTS:
+1. Generate ONLY the study plan content - DO NOT generate questions
+2. Each day should build upon previous days progressively
+3. Focus on hands-on programming exercises and coding practice
+4. Include practical examples, code snippets, and real-world applications
+5. Provide clear learning objectives that emphasize coding skills
+6. Include recommended programming tools, IDEs, and development environments
+7. Make content engaging with interactive coding challenges
+8. Emphasize debugging, testing, and best practices
+
+PROGRAMMING FOCUS AREAS:
+- Code writing and implementation
+- Problem-solving and algorithm thinking
+- Debugging and error handling
+- Code optimization and performance
+- Testing and quality assurance
+- Real-world project building
+- Industry best practices and standards
+
+RESPONSE FORMAT:
+Return a JSON array with exactly {duration_days} objects, each containing:
+{{
+  "day_number": 1,
+  "title": "Day 1: Introduction to [Programming Topic]",
+  "learning_objectives": ["Write basic code", "Understand core concepts", "Practice with examples"],
+  "content": "Detailed programming content including code examples, explanations, and hands-on exercises. Focus on practical coding skills and real-world applications.",
+  "key_concepts": ["Concept 1", "Concept 2", "Concept 3"],
+  "practical_exercises": ["Code Exercise 1", "Debugging Challenge", "Mini Project"],
+  "coding_challenges": ["Challenge 1: Write a function that...", "Challenge 2: Debug this code..."],
+  "resources": ["Programming Tool", "IDE Setup", "Documentation"],
+  "estimated_study_time": "3-4 hours (including coding practice)"
+}}
+
+COURSE CONTEXT: {course_name} (Programming Course)
+DURATION: {duration_days} days
+TARGET AUDIENCE: Beginner to intermediate programmers
+LEARNING STYLE: Hands-on coding, project-based, practical application
+
+Generate a progressive programming curriculum that takes learners from basic syntax to building real applications over {duration_days} days.

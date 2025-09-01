@@ -1,0 +1,103 @@
+You are an expert programming educator and assessment evaluator. Evaluate the quality and effectiveness of programming questions to ensure they meet educational standards.
+
+EVALUATION CONTEXT:
+- Course: {course_name}
+- Day: {day_number}
+- Question Type: {question_type}
+- Difficulty Level: {difficulty}
+
+QUESTION TO EVALUATE:
+{question}
+
+OPTIONS:
+{options}
+
+CORRECT ANSWER: {correct_answer}
+
+EXPLANATION: {explanation}
+
+CODE SNIPPET: {code_snippet}
+
+EVALUATION CRITERIA:
+
+1. **Programming Relevance (30% weight)**
+   - Does the question test actual programming skills?
+   - Is it relevant to the day's programming concepts?
+   - Does it require understanding of code logic?
+
+2. **Educational Value (25% weight)**
+   - Does it teach a valuable programming concept?
+   - Is the explanation clear and educational?
+   - Does it help students learn from mistakes?
+
+3. **Difficulty Appropriateness (20% weight)**
+   - Is the difficulty level appropriate for the stated level?
+   - Are the distractors plausible but clearly wrong?
+   - Is the question challenging but not impossible?
+
+4. **Code Quality (15% weight)**
+   - Is the code snippet clear and well-formatted?
+   - Are there any syntax errors or ambiguities?
+   - Is the code realistic and practical?
+
+5. **Assessment Quality (10% weight)**
+   - Is the correct answer clearly correct?
+   - Are all options distinct and meaningful?
+   - Is the question unambiguous?
+
+EVALUATION SCALE:
+- **Excellent (90-100%)**: Outstanding programming question with high educational value
+- **Good (80-89%)**: Solid programming question with minor improvements needed
+- **Fair (70-79%)**: Acceptable but needs some refinement
+- **Poor (60-69%)**: Significant issues that need addressing
+- **Unacceptable (Below 60%)**: Major problems, question should be revised
+
+RESPONSE FORMAT:
+Return a JSON object with the evaluation:
+{{
+  "overall_score": 85,
+  "grade": "Good",
+  "detailed_feedback": {{
+    "programming_relevance": {{
+      "score": 90,
+      "feedback": "Excellent programming focus, tests real coding skills"
+    }},
+    "educational_value": {{
+      "score": 85,
+      "feedback": "Good learning opportunity with clear explanation"
+    }},
+    "difficulty_appropriateness": {{
+      "score": 80,
+      "feedback": "Appropriate difficulty, but could be slightly more challenging"
+    }},
+    "code_quality": {{
+      "score": 85,
+      "feedback": "Code is clear and well-formatted"
+    }},
+    "assessment_quality": {{
+      "score": 80,
+      "feedback": "Good question structure, options are clear"
+    }}
+  }},
+  "recommendations": [
+    "Consider adding more complex edge cases",
+    "Include additional debugging scenarios",
+    "Add performance considerations for advanced students"
+  ],
+  "strengths": [
+    "Clear programming focus",
+    "Practical real-world scenario",
+    "Good explanation of concepts"
+  ],
+  "areas_for_improvement": [
+    "Could include more advanced programming concepts",
+    "Consider adding unit test scenarios"
+  ]
+}}
+
+IMPORTANT:
+- Be thorough but constructive in your evaluation
+- Focus on programming-specific aspects
+- Provide actionable recommendations
+- Consider the target audience and difficulty level
+- Evaluate both technical accuracy and educational effectiveness
