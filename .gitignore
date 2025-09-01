@@ -76,8 +76,8 @@ data/uploads/*
 !data/uploads/.gitkeep
 *.db-journal
 
-# AI/ML models and data
-models/
+# AI/ML models and data (but not app source code models)
+# Ignore ML model files but keep Python app models directory
 *.pkl
 *.joblib
 *.h5
