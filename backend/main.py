@@ -81,9 +81,28 @@ async def health_check():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(
-        "main:app",
-        host=settings.HOST,
-        port=settings.PORT,
-        reload=settings.DEBUG
-    )
+    from uvicorn_config import configure_uvicorn_logging, get_reload_dirs, get_reload_excludes
+    
+    # Configure logging to reduce noise
+    configure_uvicorn_logging()
+    
+    # Development configuration
+    if settings.DEBUG:
+        uvicorn.run(
+            "main:app",
+            host=settings.HOST,
+            port=settings.PORT,
+            reload=True,
+            reload_dirs=get_reload_dirs(),
+            reload_excludes=get_reload_excludes(),
+            log_level="info"
+        )
+    else:
+        # Production configuration
+        uvicorn.run(
+            "main:app",
+            host=settings.HOST,
+            port=settings.PORT,
+            reload=False,
+            log_level="warning"
+        )

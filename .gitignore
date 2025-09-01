@@ -65,6 +65,18 @@ logs/*.out
 !logs/.gitkeep
 *.pid
 
+# Additional files that can trigger file watchers
+*.swp
+*.swo
+*~
+.#*
+#*#
+*.orig
+*.rej
+*.bak
+*.tmp
+*.temp
+
 # Database files (keep folder structure, ignore database files)
 *.db
 *.sqlite
